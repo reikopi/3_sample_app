@@ -6,6 +6,10 @@
 
  <h4>本文</h4>
  <%= f.text_area :body %>
+ 
+ <h4>画像</h4>
+ <%=f.file_field :image,accept:"image/*" %>
+ <!--accept:"image/*"は画像ファイル以外の音声や動画ファイルが投稿できないようにするため-->
 
  <%= f.submit'投稿'%>
 

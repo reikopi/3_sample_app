@@ -28,10 +28,17 @@ class ListsController < ApplicationController
     redirect_to list_path(list.id)
   end
 
+  def destroy
+    list=List.find(params[:id])
+    list.destroy
+    redirect_to '/lists'
+  end
+
   private
   # ストロングパラメータ
   def list_params
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title, :body, :image)
+  # imageも受け取るように追記
   end
 
 end
